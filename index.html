@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daynest • مهام اليوم</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-card">
+    <div class="status-bar">
+      <div><i class="fas fa-signal"></i> <i class="fas fa-wifi"></i> <i class="fas fa-battery-three-quarters"></i></div>
+      <div style="display: flex; gap: 1rem;">
+        <span class="date-badge" id="live-time"></span>
+        <button class="dark-toggle" id="darkModeToggle"><i class="fas fa-moon"></i> Dark</button>
+      </div>
+    </div>
+
+    <div class="main-grid">
+      <!-- القسم الأيسر: التقويم -->
+      <div class="calendar-section">
+        <div class="calendar-header">
+          <span class="current-month" id="currentMonthDisplay"></span>
+          <div class="month-nav">
+            <button id="prevMonthBtn"><i class="fas fa-chevron-left"></i></button>
+            <button id="nextMonthBtn"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+        <div class="weekdays">
+          <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+        </div>
+        <div id="calendarDays" class="days-grid"></div>
+        <div style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+          <i class="fas fa-calendar-check"></i> <span id="selectedDateDisplay">اختر يوماً</span>
+        </div>
+      </div>
+
+      <!-- القسم الأيمن: المهام -->
+      <div class="tasks-section">
+        <div class="tasks-header">
+          <h2><i class="fas fa-tasks" style="margin-right: 8px;"></i>Today's Tasks</h2>
+          <div class="task-controls">
+            <select id="priorityFilter" class="priority-select">
+              <option value="all">كل الأولويات</option>
+              <option value="عالية">🔴 عالية</option>
+              <option value="متوسطة">🟡 متوسطة</option>
+              <option value="منخفضة">🟢 منخفضة</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- شريط التقدم -->
+        <div class="progress-section">
+          <div class="progress-label">
+            <span><i class="fas fa-chart-line"></i> تقدم الإنجاز</span>
+            <span class="progress-percent" id="progressPercent">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- قائمة المهام -->
+        <div id="taskListContainer" class="task-list"></div>
+
+        <!-- إضافة مهمة جديدة -->
+        <div class="add-task-form">
+          <input type="text" id="newTaskText" placeholder="ماذا تخطط لليوم؟ ✍️" />
+          <select id="newTaskPriority">
+            <option value="منخفضة">🟢 منخفضة</option>
+            <option value="متوسطة" selected>🟡 متوسطة</option>
+            <option value="عالية">🔴 عالية</option>
+          </select>
+          <input type="text" id="newTaskBadge" placeholder="تصنيف (مثل 📚, 🛒...)" value="📌" />
+          <button id="addTaskBtn"><i class="fas fa-plus"></i> أضف</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script> 
+</body>
+</html>
