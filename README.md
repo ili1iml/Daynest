@@ -13,3 +13,6 @@ Dark/Light modes, helping users organize thier daily schedules efficiently.
 HTML5 (Structure)
 CSS3 (Styling & Animations)
 JavaScript (Logic & Interactivity)
+
+## 👩‍🎨 About the Author
+Developed by M, a passionate developer blending the world of digital art with modern web development
