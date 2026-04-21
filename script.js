@@ -18,7 +18,7 @@
         const saved = localStorage.getItem(STORAGE_KEY);
         if (saved) {
           tasks = JSON.parse(saved);
-          // التأكد من أن كل مهمة لها الخاصيات المطلوبة (للإصدارات القديمة)
+          // التأكد من أن كل مهمة لها الخاصيات المطلوبة 
           tasks = tasks.map(t => ({ ...t, editMode: false }));
         }
       } catch (e) {
